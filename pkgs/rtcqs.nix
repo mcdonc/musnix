@@ -9,6 +9,7 @@ pkgs.python3.pkgs.buildPythonApplication rec {
     ];
     propagatedBuildInputs = [
       pkgs.python3.pkgs.pysimplegui
+      pkgs.python3.pkgs.rsa
     ];
     src = fetchPypi {
       inherit pname version;
