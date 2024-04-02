@@ -66,7 +66,7 @@ with lib;
   linuxPackages_6_6_rt  = recurseIntoAttrs (linuxPackagesFor self.linux_6_6_rt);
   linuxPackages_6_8_rt  = recurseIntoAttrs (linuxPackagesFor self.linux_6_8_rt);
 
-  linuxPackages_rt = self.linuxPackages_6_1_rt;
+  linuxPackages_rt = self.linuxPackages_6_6_rt;
   linux_rt = self.linuxPackages_rt.kernel;
 
   linuxPackages_latest_rt = self.linuxPackages_6_8_rt;
@@ -75,6 +75,5 @@ with lib;
   realtimePatches = callPackage ./pkgs/os-specific/linux/kernel/patches.nix {};
 
   rtirq = callPackage ./pkgs/os-specific/linux/rtirq {};
-  rtcqs = callPackage ./pkgs/rtcqs.nix {};
 
 }
